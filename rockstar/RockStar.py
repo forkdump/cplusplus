@@ -75,8 +75,10 @@ class RockStar:
     def _get_dates_list(self):
         def dates():
             today = date.today()
+            print("today ", today)
             for day_delta in range(self.days):
                 day = today - timedelta(days=day_delta)
+                print("day: ", day)
                 if day.strftime('%A') in self.days_off:
                     continue
                 if randint(1, 100) < self.off_fraction * 100:
